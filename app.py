@@ -9,6 +9,7 @@ def lerArquivo():
     return rotas
 
 rotas = lerArquivo()
+rotas.removeVertice('A')
 rotas.mostraGrafo()
 
 

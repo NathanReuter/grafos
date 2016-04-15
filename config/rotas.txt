@@ -1,4 +1,5 @@
 from grafo import Grafo
+import random
 
 rotas = Grafo()
 rotas.adicionaVertices('A')
@@ -8,11 +9,11 @@ rotas.adicionaVertices('D')
 rotas.adicionaVertices('E')
 rotas.adicionaVertices('F')
 rotas.adicionaVertices('G')
-rotas.ligaArestas('A', 'B', True)
-rotas.ligaArestas('A', 'C', True)
-rotas.ligaArestas('A', 'D', True)
-rotas.ligaArestas('E', 'F', True)
-rotas.ligaArestas('E', 'G', True)
-rotas.ligaArestas('G', 'F', True)
-rotas.ligaArestas('D', 'G', True)
-rotas.mostraGrafo()
+rotas.ligaArestas('A', 'B', random.randrange(100), True)
+rotas.ligaArestas('A', 'C', random.randrange(100),True)
+rotas.ligaArestas('A', 'D', random.randrange(100), True)
+rotas.ligaArestas('E', 'F', random.randrange(100), True)
+rotas.ligaArestas('E', 'G', random.randrange(100), True)
+rotas.ligaArestas('G', 'F', random.randrange(100), True)
+rotas.ligaArestas('D', 'G', random.randrange(100), True)
+
