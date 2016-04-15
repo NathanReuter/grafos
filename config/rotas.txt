@@ -1,0 +1,18 @@
+from grafo import Grafo
+
+rotas = Grafo()
+rotas.adicionaVertices('A')
+rotas.adicionaVertices('B')
+rotas.adicionaVertices('C')
+rotas.adicionaVertices('D')
+rotas.adicionaVertices('E')
+rotas.adicionaVertices('F')
+rotas.adicionaVertices('G')
+rotas.ligaArestas('A', 'B', True)
+rotas.ligaArestas('A', 'C', True)
+rotas.ligaArestas('A', 'D', True)
+rotas.ligaArestas('E', 'F', True)
+rotas.ligaArestas('E', 'G', True)
+rotas.ligaArestas('G', 'F', True)
+rotas.ligaArestas('D', 'G', True)
+rotas.mostraGrafo()
