@@ -1,13 +1,3 @@
-#!/usr/bin/python
-from grafo import Grafo
-
-def lerArquivo():
-    f = open('config/rotas.txt')
-    code = f.read()
-    exec code
-    f.close()
-    return rotas
-
 def floydwarshallVariante(graph):
 
     # Initialize dist and pred:
@@ -37,32 +27,27 @@ def floydwarshallVariante(graph):
                     pred[u][v] = pred[t][v] # route new path through t
     return dist, pred
 
-def trajetoriaAmbulancia(graph,hosp1,hosp2,emergencia):
-    a = {}
+def trajetoriaAmbulancia(graph,hosp1,hosp2,emergencia){
+    a={}
     a = floydwarshallVariante(graph) #chama a funcao que retorna as matrizes de custo e predecessor
     custo1 = a[0][hosp1][emergencia] #custo do hospital 1 a emergencia
     custo2 = a[0][hosp2][emergencia] #custo do hospital 2 a emergencia
-
     if (custo1 > custo2):             #verifica o menor custo
         vencedor = hosp2
         custoV = custo2
     else:
         vencedor = hosp1
         custoV = custo1
-
     caminho = {}
     caminho[0] = vencedor
     anterior = a[1][vencedor][emergencia]        #passo anterior do caminho mais curto
     caminho[1] = anterior
     i = 2
 
-    while (anterior != emergencia):               #enquanto nao chega ao local, busca e adiciona o passo anterior
+    while{anterior != emergencia}               #enquanto nao chega ao local, busca e adiciona o passo anterior
         caminho[i] = a[1][anterior][emergencia]
         i = i +1
-
     if(i < 2):                                  #caso haja passo entre os destinos
         caminho[i] = emergencia
     return custoV, caminho
-
-rotas = lerArquivo()
-trajetoriaAmbulancia(rotas, 0, 3, 7)
+}
