@@ -1,6 +1,7 @@
 
 from pprint import pprint
 from colors import Bcolors
+import random
 
 class Grafo(object):
     """docstring for Grafo"""
@@ -38,6 +39,8 @@ class Grafo(object):
         else:
             print 'Vertice indicado nao foi passado.' + Bcolors.ENDC
 
+    # TODO DESCONECTA
+
     def ordem(self):
         return len(grafo.keys())
 
@@ -47,6 +50,17 @@ class Grafo(object):
     def mostraGrafo(self):
         pprint(grafo)
 
+    # TODO umVertice
+    def umVertice(self):
+        return grafo[random.randrange(self.ordem())]
+
+    def adjacentes(self, vertice):
+        return grafo[vertice]
+
+    def grau(self, vertice):
+        return len(self.adjacentes(vertice))
+
+    # vertices
     def retornaGrafo(self):
         return grafo
 

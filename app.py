@@ -103,3 +103,4 @@ rotas = lerArquivo()
 montaGrafo(grafoDeRotas, rotas, True)
 resp = trajetoriaAmbulancia(grafoDeRotas.retornaGrafo(), hospital1, hospital2, emergencia)
 bonitificador(resp[0], resp[1])
+
