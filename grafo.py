@@ -46,3 +46,6 @@ class Grafo(object):
     def mostraGrafo(self):
         pprint(grafo)
 
+    def retornaGrafo(self):
+        return grafo
+

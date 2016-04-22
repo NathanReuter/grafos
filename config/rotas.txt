@@ -1,21 +1,14 @@
 from grafo import Grafo
 import random
 
+# random.randrange(100)
+
 rotas = Grafo()
-rotas.adicionaVertices(0)
 rotas.adicionaVertices(1)
 rotas.adicionaVertices(2)
 rotas.adicionaVertices(3)
-rotas.adicionaVertices(4)
-rotas.adicionaVertices(5)
-rotas.adicionaVertices(6)
-rotas.adicionaVertices(7)
-rotas.ligaArestas(0, 1, random.randrange(100), True)
-rotas.ligaArestas(0, 2, random.randrange(100), True)
-rotas.ligaArestas(0, 3, random.randrange(100), True)
-rotas.ligaArestas(1, 2, random.randrange(100), True)
-rotas.ligaArestas(3, 4, random.randrange(100), True)
-rotas.ligaArestas(4, 7, random.randrange(100), True)
-rotas.ligaArestas(6, 5, random.randrange(100), True)
+rotas.ligaArestas(1, 2, 3, True)
+rotas.ligaArestas(2, 3, 1, True)
+rotas.ligaArestas(3, 1, 1, True)
 
 
