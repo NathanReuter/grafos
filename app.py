@@ -101,6 +101,10 @@ def bonitificador(custo, caminho):
 
 rotas = lerArquivo()
 montaGrafo(grafoDeRotas, rotas, True)
-resp = trajetoriaAmbulancia(grafoDeRotas.retornaGrafo(), hospital1, hospital2, emergencia)
-bonitificador(resp[0], resp[1])
+# resp = trajetoriaAmbulancia(grafoDeRotas.retornaGrafo(), hospital1, hospital2, emergencia)
+# bonitificador(resp[0], resp[1])
+
+grafoDeRotas.mostraGrafo()
+grafoDeRotas.desconecta(0, 1, True)
+grafoDeRotas.mostraGrafo()
 

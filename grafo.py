@@ -40,6 +40,13 @@ class Grafo(object):
             print 'Vertice indicado nao foi passado.' + Bcolors.ENDC
 
     # TODO DESCONECTA
+    def desconecta(self, vertice1, vertice2, bidirecional):
+        for aresta in enumerate(grafo[vertice1]):
+            if (aresta[1][0] == vertice2):
+                del grafo[vertice1][aresta[0]]
+
+        if (bidirecional):
+            self.desconecta(vertice2, vertice1, False)
 
     def ordem(self):
         return len(grafo.keys())
