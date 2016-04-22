@@ -1,14 +1,13 @@
-from grafo import Grafo
-import random
+#rotas = [[1, 2, 3],
+#        [2, 3, 1],
+#        [3, 1, 1],
+#        [1, 3, 1000000]]
 
-# random.randrange(100)
-
-rotas = Grafo()
-rotas.adicionaVertices(1)
-rotas.adicionaVertices(2)
-rotas.adicionaVertices(3)
-rotas.ligaArestas(1, 2, 3, True)
-rotas.ligaArestas(2, 3, 1, True)
-rotas.ligaArestas(3, 1, 1, True)
-
-
+rotas = [[0, 1, 7],
+        [0, 2, 3],
+        [1, 2, 2],
+        [1, 4, 1],
+        [4, 2, 4],
+        [4, 3, 2],
+        [3, 2, 5],
+        [0, 3, 1000000]]

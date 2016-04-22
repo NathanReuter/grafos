@@ -15,7 +15,6 @@ class Grafo(object):
 
     def adicionaVertices(self, vertice):
         if (grafo.get(vertice) is not None):
-            print 'Vertice ja existe' + Bcolors.ENDC
             return;
 
         grafo[vertice] = []
@@ -39,8 +38,10 @@ class Grafo(object):
         else:
             print 'Vertice indicado nao foi passado.' + Bcolors.ENDC
 
+    def ordem(self):
+        return len(grafo.keys())
 
-    def numeroDeArestas():
+    def numeroDeArestas(self):
         return numeroDeArestas
 
     def mostraGrafo(self):
