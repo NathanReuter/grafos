@@ -1,13 +1,14 @@
+# Nathan Reuter Godinho
+# Ad Nunes Ribeiro
+# Disciplina: Grafos
 
 from pprint import pprint
-from colors import Bcolors
 import random
 
 class Grafo(object):
     """docstring for Grafo"""
 
     global grafo
-    global numeroDeArestas
     grafo = {}
 
 
@@ -51,13 +52,9 @@ class Grafo(object):
     def ordem(self):
         return len(grafo.keys())
 
-    def numeroDeArestas(self):
-        return numeroDeArestas
-
     def mostraGrafo(self):
         pprint(grafo)
 
-    # TODO umVertice
     def umVertice(self):
         return grafo[random.randrange(self.ordem())]
 

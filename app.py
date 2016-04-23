@@ -6,14 +6,14 @@ import random
 grafoDeRotas = Grafo()
 global hospital1
 global hospital2
-emergencia = 1
+
 
 def lerArquivo():
-    f = open('config/rotas.txt')
+    f = open('config/ambulan2.dat')
     code = f.read()
     exec code
     f.close()
-    return rotas
+    return arestas
 
 def montaGrafo(grafo, grafoEmLista, temHospitais):
     for index, aresta in enumerate(grafoEmLista):
@@ -95,16 +95,15 @@ def bonitificador(custo, caminho):
         if (index < len(caminho.keys()) - 1):
             string = string + str(caminho[v]) + ' -> '
         else:
-            string = string + str(v)
+            string = string + str(caminho[v])
     print 'Custo: ', custo
     print 'Caminho: ', string
 
-rotas = lerArquivo()
-montaGrafo(grafoDeRotas, rotas, True)
-# resp = trajetoriaAmbulancia(grafoDeRotas.retornaGrafo(), hospital1, hospital2, emergencia)
-# bonitificador(resp[0], resp[1])
+def buscarMelhorRota(emergencia):
+    rotas = lerArquivo()
+    montaGrafo(grafoDeRotas, rotas, True)
+    resp = trajetoriaAmbulancia(grafoDeRotas.retornaGrafo(), hospital1, hospital2, emergencia)
+    bonitificador(resp[0], resp[1])
 
-grafoDeRotas.mostraGrafo()
-grafoDeRotas.desconecta(0, 1, True)
-grafoDeRotas.mostraGrafo()
+buscarMelhorRota(6)
 
